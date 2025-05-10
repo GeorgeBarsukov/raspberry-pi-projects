@@ -1,0 +1,26 @@
+## Limit the CPU access of a program
+```
+sudo apt install cpulimit
+cpulimit --exe your_program_name --limit 30
+```
+
+## Limit the CPU for all programs
+```
+sudo apt install cpufrequtils
+sudo cpufreq-set -g powersave
+```
+or
+```
+sudo cpufreq-set -u 800MHz
+```
+
+## Deprioritize programs
+```
+nice -n 19 your_program_name    # 19 is minimum
+ionice -c3 your_program_name
+```
+
+## Throttle based on temp
+```
+sudo ./cpu_temp_throttle.sh
+```
